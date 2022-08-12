@@ -1,0 +1,101 @@
+.btn1{
+    width: 1.2049% !important; 
+    height: 2.702%;
+    float: left;
+
+    background-color: transparent;
+
+    border-radius: 0px;
+    border: 0px;
+
+    max-width: 100%;
+    
+    
+}
+
+
+.color-orange {
+    background-color: orange;
+  }
+
+
+#circle{
+  border-radius: 50%;
+  /* resize: both;
+  overflow: auto; */
+  overflow: auto;
+  width: 100px;
+  position: absolute;
+  z-index: 3;
+  height: 100px;
+  background-color: transparent;
+  border: 2px solid black;
+}
+
+
+  #map {
+    height: 500px;
+    /* The height is 400 pixels */
+    width: 100%;
+    
+
+    /* The width is the width of the web page */
+  }
+
+
+
+  #buttongrid{
+    position: absolute;
+    height: 100%;
+     z-index: 2;
+     visibility: visible;
+     border: 1px solid white;
+  }
+
+
+
+  .menu_link{
+    font-size: 5.35vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+  }
+
+  .menu_link:hover{
+    text-decoration: underline !important;
+    text-decoration-color: #214f77 !important;
+    color: #214f77;
+  }
+  
+  #menu{
+    transition:opacity 0.3s, visibility 0.3s;
+  }
+  
+  #btn{
+    transition:opacity 0.3s, visibility 0.3s;
+  }
+  
+  .invisible{
+    visibility: hidden;
+    opacity:0;
+  }
+  
+  .back-black{
+    color: white !important;
+    background-color: black !important;
+  }
+
+.invisibility-toggle-grid{
+  visibility: hidden !important;
+}
+
+.invisibility-toggle-button{
+  visibility: hidden !important;
+}
+
+.invisibility-toggle-on{
+  visibility: hidden !important;
+}
+
+.invisibility-toggle-on2{
+  visibility: hidden !important;
+}

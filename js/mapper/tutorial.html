@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="tutorial_styles.css">
+    <title>How to Use</title>
+</head>
+<body style="background-color: black;">
+    
+
+        
+  <button id="btn" style="outline: none; background-color: rgb(238, 236, 236);  font-weight: bold; font-size: 1.35vw; border-radius: 0px; margin-left: 96%; margin-top: 1%; position: absolute; border: none; z-index: 4; position: fixed; " class="back-black">\ \</button>
+
+  <div id="menu" style="background-color: rgb(238, 236, 236); width: 100%; height: 100vh; z-index: 3; position: absolute; position: fixed; " class="invisible">
+      <ul class="menu_list" style="padding-left: 10%; padding-top: 12%; margin-left: 25%; list-style-type: none;">
+          <li class="menu_item">
+              <a href="index.html" title="" class="menu_link">home</a>
+          </li>
+          <li class="menu_item">
+               <a href="background.html" title="" class="menu_link">background</a>
+          </li>
+          <li class="menu_item">
+               <a href="tutorial.html" title="" class="menu_link">how-to-use</a>
+          </li>
+          <li class="menu_item">
+               <a href="map.html" title="" class="menu_link">mapping tool</a>
+          </li>
+      </ul>
+  </div>
+
+  <div style="position: relative; padding-top: 2.5%;">
+
+    <div id="tutorial_photo" class="text-center" style="width:95%; height: 87vh; margin-left: 2.5%; margin-top: 1%; margin-bottom: 4%;">
+    <p style="font-family:'Courier New', Courier, monospace; font-size: 9vw; color: black; padding-top: 12%; letter-spacing: 5px;">How to use the mapping tool</p>
+  </div>
+
+
+  <div class="row" style="width: 80%; margin: 10%;" >
+    <div class="col-md-6">
+      <img src="london_map.png" style="width: 100%;">
+    </div>
+    <div class="col-md-6"> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">Access the <a href="map.html">Mapping tool</a> and navigate the map such that it shows the city/area that you plan to use for geographic profiling. Then press the <img style="width: 10%;" src="grid.png"> button.</p>
+    </div>
+  </div>
+
+  <div class="row" style="width: 80%; margin: 10%;" >
+    <div class="col-md-6">
+      <img src="select.png" style="width: 60%; margin-left: 20%;">
+    </div>
+    <div class="col-md-6"> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">With the <img style="width: 10%;" src="grid.png"> button on, you can now select the spots where the criminal has already committed crimes. The selected spots will be coloured <span style="color: orange;">orange</span>.  Next, press the <img style="width: 15%;" src="buffer.png"> button.</p>
+    </div>
+  </div>
+
+  <div class="row" style="width: 80%; margin: 10%;" >
+    <div class="col-md-6">
+      <img src="bufferzone.png" style="width: 100%;">
+    </div>
+    <div class="col-md-6"> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">The base of the criminal is likely to be outside a buffer surrounding each crime. You can enter the radius of this buffer by using the <img style="width: 30%;" src="slider.png"> slider. You can press the <img style="width: 15%;" src="buffer.png"> button to see a circle which is a visual representation of the buffer entered. This circle can be moved around the map for better estimations. In most cases, the buffer radius is unique to the criminal and is often to be determined beforehand.</p>
+    </div>
+  </div>
+
+  <div class="row" style="width: 80%; margin: 10%;" >
+    <div class="col-md-6">
+      <img src="fg.png" style="width: 60%; margin-left: 20%; margin-top: 30%;">
+    </div>
+    <div class="col-md-6"> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">The value of 'f' controls how fast the probability decays beyond the buffer zone while the value of 'g' controls how fast it decays inside the buffer zone. These values are often unique to the criminal and to be determined beforehand. A value of 0.67 is set as default for both.</p>
+    </div>
+  </div>
+
+  <div style="width: 80%; margin: 10%;" >
+    <div> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">After selecting crime locations, setting a buffer radius, and setting 'f' and 'g' values, you can press the <img src="results.png" style="width: 10%;"> button to show the resulting map. </p>
+    </div>
+
+
+    <p style="color: white; font-size: 4vw; font-family: 'Courier New', Courier, monospace; margin-top: 7%; margin-bottom: 2%;">Reading the results</p>
+
+    <div> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">Squares coloured <span style="color: yellow;"> yellow</span> have a good probability of being the criminal's base.</p>
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">Squares coloured <span style="color: orange;"> orange</span> have a high probability of being the criminal's base.</p>
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace;">Squares coloured <span style="color: red;"> red</span> have the highest probability of being the criminal's base.</p>
+    </div>
+
+
+    <div> 
+      <p style="color: white; font-size: 2vw; font-family: 'Courier New', Courier, monospace; margin-top: 10%;">Note that after getting the results, you can still change the buffer radius, 'f' and 'g' values and generate new results by pressing the <img src="results.png" style="width: 10%;"> button again after making the changes.</p>
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+        
+
+
+
+
+
+<script src="/jquery/jquery-3.6.0.js"></script>
+<script src="/jqueryui/jquery-ui.js"></script>  
+<script src="tutorial_js.js"></script>
+    
+</body>
+</html>
