@@ -114,6 +114,9 @@ g = parseFloat(document.getElementById("g_entry").value);
  console.log(f);
  console.log(g);
  console.log(bufferRadius);
+  
+var finalList = [];
+var sampleList = [];
 
   // bufferRadius = 5.79166667;
 
