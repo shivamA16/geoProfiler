@@ -22,7 +22,7 @@
 
 #btn{
   transition:opacity 0.3s, visibility 0.3s;
-  background-color: transparent;  
+  background-color: transparent; 
   font-size: 17px; 
   color: black;
   right: 2%;
@@ -40,7 +40,6 @@
 
 .back-black{
   color: white !important;
-  background-color: transparent !important;
 }
 body{
   background-color: black;
