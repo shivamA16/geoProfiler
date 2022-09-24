@@ -4,12 +4,32 @@
     color: black;
 }
 
+.menu_list{
+    list-style-type: none;
+}
+
 #menu{
     transition:opacity 0.3s, visibility 0.3s;
+    background-color: rgb(238, 236, 236);
+    width: 100%; 
+    height: 100vh;
+    z-index: 3;
+    position: absolute;
+    position: fixed;
 }
 
 #btn{
     transition:opacity 0.3s, visibility 0.3s;
+    background-color: rgb(238, 236, 236);  
+    font-size: 1.15vw; 
+    color: black;
+    font-size: 17px; 
+    right: 2%;
+    top: 2%;
+    position: absolute; 
+    border: none; 
+    z-index: 4; 
+    position: fixed;
 }
 
 .invisible{
@@ -19,13 +39,141 @@
 
 .back-black{
     color: white !important;
-    background-color: black !important;
+    background-color: transparent !important;
 }
 
 #map_ss{
-    background-image: url("map_ss.png");
-    height: 90vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
+    position: relative;
+    width: 100%; 
+    padding-top: 3.5%;
 }
+
+.bg_img {
+    width: 85%;
+    height: 100%;
+}
+
+.bg_text {
+    position: absolute;
+    transform: translateY(-5%);
+    font-family: 'Courier New', Courier, monospace; 
+    color: BLACK; 
+    font-size: 10vw;
+    margin: unset;
+}
+
+.info_p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.7vw;
+    width: 88%;
+    margin-left: 6%;
+    color: rgb(238, 236, 236);
+}
+
+.info_p2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vw;
+    width: 88%;
+    margin-left: 6%;
+    color: rgb(238, 236, 236);
+}
+
+.link_list{
+    list-style-type: none;
+    width: 92%;
+    margin-left: 4%;
+    font-size: 2vw;
+    margin-bottom: 5%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.rossmo_row{
+    width: 80%;
+    margin: 10%;
+    color: rgb(238, 236, 236);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.rossmo_p{
+    font-size: 2vw;
+    padding-top: 2%;
+}
+
+
+
+body{
+    background-color: black;
+}
+
+.info_class{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.test{
+    font-family:'Courier New', Courier, monospace; 
+    color:rgb(238, 236, 236); 
+    font-size: 1.5vw; 
+}
+
+.test_p{
+    border: 1px solid grey;  
+    margin: 0;
+    padding: 5%;
+}
+
+.kc{
+    margin-left: 6%; 
+    width: 88%;
+    color: rgb(238, 236, 236); 
+    font-size: 2.7vw; 
+    font-family: 'Courier New', Courier, monospace; 
+    margin-bottom: 3%;
+}
+
+.geo_pro{
+    width: 80%;
+    color: rgb(238, 236, 236); 
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10%;
+}
+
+.heading{
+    font-size: 7vw;
+}
+
+@media screen and (max-width: 758px){
+
+    #map_ss{
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    .bg_text{
+        font-size: 11vw;
+    }
+
+    .rossmo_p{
+        font-size: 3vw;
+    }
+
+    .kc{
+        font-size: 4vw;
+    }
+    
+    .test_p{
+        font-size: 3vw;
+    }
+
+    .info_p{
+        font-size: 4vw;
+    }
+
+    .info_p2{
+        font-size: 3vw;
+    }
+
+    .link_list{
+        font-size: 3vw;
+    }
+  }
