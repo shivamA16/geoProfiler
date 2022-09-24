@@ -4,13 +4,34 @@
   color: black;
 }
 
+.menu_list{
+  list-style-type: none;
+}
+
 #menu{
   transition:opacity 0.3s, visibility 0.3s;
+  background-color: rgb(238, 236, 236);
+  width: 100%; 
+  height: 100vh;
+  z-index: 3;
+  position: absolute;
+  position: fixed;
 }
 
 #btn{
   transition:opacity 0.3s, visibility 0.3s;
+  background-color: rgb(238, 236, 236);  
+  font-size: 1.15vw; 
+  color: black;
+  right: 2%;
+  font-size: 17px; 
+  top: 2%;
+  position: absolute; 
+  border: none; 
+  z-index: 4; 
+  position: fixed;
 }
+
 
 .invisible{
   visibility: hidden;
@@ -23,7 +44,80 @@
 }
 
 #tutorial_photo{
- background-image: url("london.png");
- background-size: contain;
- background-repeat: no-repeat;
+  position: relative;
+  width: 100%; 
+  padding-top: 6%;
+}
+
+.bg_img {
+  width: 85%;
+  height: 100%;
+}
+
+.bg_text {
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace; 
+  color: BLACK; 
+  font-size: 7vw;
+  width: 60%;
+  margin: unset;
+}
+
+.info_row{
+  width: 80%; 
+  margin: 10%;
+}
+
+.info_pic{
+  width: 100%;
+  max-width: 50vw;
+}
+
+.info_p{
+  color: white; 
+  font-size: 2vw; 
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5%;
+}
+
+.color_p{
+  color: white; 
+  font-size: 2vw; 
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#margin_id{
+  margin-top: 8%;
+  font-size: 4vw;
+}
+
+#margin_id2{
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 758px){
+
+  #tutorial_photo{
+      padding-top: 70px;
+      padding-bottom: 30px;
+  }
+
+  .bg_text{
+      font-size: 9vw;
+  }
+
+
+
+  .info_p{
+      font-size: 3.5vw;
+  }
+
+  .testpadding{
+    margin-top: 70px;
+  }
+ 
+
+  .color_p{
+    font-size: 3vw;
+  }
 }
