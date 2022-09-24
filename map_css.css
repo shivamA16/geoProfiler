@@ -1,18 +1,24 @@
 .btn1{
-    width: 1.2049% !important; 
-    height: 2.702%;
-    float: left;
-
     background-color: transparent;
-
     border-radius: 0px;
-    border: 0px;
-
-    max-width: 100%;
-    
-    
+    border: none;
+    padding: unset;
+    width: 100%;
+    height: 100%;
 }
 
+.map_main_container {
+  margin: 0 auto;
+  position: relative;
+  width: 80vw;
+}
+
+.btn_row {
+  display: flex;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+}
 
 .color-orange {
     background-color: orange;
@@ -21,25 +27,20 @@
 
 #circle{
   border-radius: 50%;
-  /* resize: both;
-  overflow: auto; */
   overflow: auto;
   width: 100px;
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   height: 100px;
-  background-color: transparent;
   border: 2px solid black;
+  background-color: black; 
+  opacity: 0.6; 
 }
 
 
   #map {
     height: 500px;
-    /* The height is 400 pixels */
     width: 100%;
-    
-
-    /* The width is the width of the web page */
   }
 
 
@@ -47,32 +48,17 @@
   #buttongrid{
     position: absolute;
     height: 100%;
-     z-index: 2;
+    width: 100%;
+     z-index: 4;
      visibility: visible;
      border: 1px solid white;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
   }
 
 
 
-  .menu_link{
-    font-size: 5.35vw;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
-  }
-
-  .menu_link:hover{
-    text-decoration: underline !important;
-    text-decoration-color: #214f77 !important;
-    color: #214f77;
-  }
-  
-  #menu{
-    transition:opacity 0.3s, visibility 0.3s;
-  }
-  
-  #btn{
-    transition:opacity 0.3s, visibility 0.3s;
-  }
   
   .invisible{
     visibility: hidden;
@@ -81,7 +67,7 @@
   
   .back-black{
     color: white !important;
-    background-color: black !important;
+    background-color: transparent !important;
   }
 
 .invisibility-toggle-grid{
@@ -98,4 +84,168 @@
 
 .invisibility-toggle-on2{
   visibility: hidden !important;
+}
+body{
+  background-color: black;
+}
+
+
+.menu_link{
+  font-size: 5.35vw;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+
+.menu_list{
+  list-style-type: none;
+}
+
+#menu{
+  transition:opacity 0.3s, visibility 0.3s;
+  background-color: rgb(238, 236, 236);
+  width: 100%; 
+  height: 100vh;
+  z-index: 6;
+  position: absolute;
+  position: fixed;
+}
+
+#btn{
+  transition:opacity 0.3s, visibility 0.3s;
+  background-color: rgb(238, 236, 236);  
+  color: black;
+  font-size: 1.15vw; 
+  right: 2%;
+  font-size: 17px; 
+  top: 2%;
+  position: absolute; 
+  border: none; 
+  z-index: 7; 
+  position: fixed;
+}
+
+body{
+  background-color: black;
+  margin: unset;
+}
+
+.start_p{
+  color: white; 
+  font-family: 'Courier New', Courier, monospace; 
+  padding-top: 5%; 
+  width: 80%; 
+  margin: unset;
+  margin-left:5%;
+  font-size: 3vw;
+}
+
+#welcome{
+  font-size: 8vw;
+}
+
+.btn_options{
+  font-family: 'Courier New', Courier, monospace; 
+  margin-top: 3%;
+  width: 80%;
+  margin-left: 9%;
+}
+
+.option_btn{
+  border-radius: 0; 
+  border: none; 
+  font-size: 1.5vw;
+
+}
+
+.labeltxt{
+  color: white;
+  font-size: 1.5vw;
+}
+
+.on{
+  color: blue;
+  padding: unset;
+}
+
+.inputbox{
+  max-width: 100%;
+  height: 4vh;
+}
+
+#slider{
+  width: 100%;
+  max-width: 200px;
+}
+
+.slider_div{
+  padding: unset;
+}
+
+.connect{
+  color:white; 
+  font-family: 'Courier New', Courier, monospace; 
+  margin-left: 5%; 
+  margin-top: 10%;
+  margin-bottom: 5%; 
+  font-size: 1.5vw;
+}
+
+@media screen and (max-width: 574px){
+
+
+  #welcome{
+      font-size: 9vw;
+      margin: auto;
+      padding-top: 50px;
+      padding-bottom: 30px;
+  }
+ 
+  .start_p{
+    font-size: 3.5vw;
+    margin: auto;
+}
+
+.btn_options{
+  padding-left: 25%;
+}
+
+
+
+  .map_main_container{
+    margin-top: 50px;
+  }
+
+  #btnshow{
+    margin-top: 50px;
+  }
+
+  .option_btn{
+    font-size: 4vw;
+    width: 25vw;
+    color: black;
+  }
+
+  .labeltxt{
+    font-size: 4vw;
+    margin-top: 10%;
+    margin-right: 90%;
+  }
+
+  .slider_div{
+    margin-left: 5%;
+    width: 45%;
+    margin-bottom: 3%;
+  }
+
+  #result{
+    margin-top: 50px;
+  }
+
+  .inputbox{
+    width: 50%;
+  }
+
+  .connect{
+    font-size: 3vw;
+  }
 }
