@@ -1,19 +1,17 @@
-// let i=0, n=30;
-
-// container.innerHTML = 
-//     `<div class="row">${'<div class="cell"></div>'.repeat(n)}</div>`
-//     .repeat(n)
-
 let f = 0.67;
 let g = 0.67;
-
-
 
 var coordinateList = [];
 var finalList = [];
 var sampleList = [];
 var bufferRadius = 0;
 
+var numButtons = 0
+var numColumns = 0
+var numRows = 0
+
+
+$(document).ready(()=>{
 
 var slider = document.getElementById("slider");
 
@@ -21,14 +19,15 @@ slider.onchange = function(){
   var value = slider.value;
   $("#circle").css("width", value);
   $("#circle").css("height", value);
-  document.getElementById("bufferval").value = (value/24).toFixed(3);
+  document.getElementById("bufferval").value = (value/20).toFixed(3);
   finalList = [];
   sampleList = [];
 }
 
+
 var bufferval = document.getElementById("bufferval");
 bufferval.oninput = function(){
-  slider.value = bufferval.value * 24;
+  slider.value = bufferval.value * 20;
   $("#circle").css("width", slider.value);
   $("#circle").css("height", slider.value);
   finalList = [];
@@ -58,7 +57,8 @@ $("#circle").draggable({
 function change(e){
   e.target.classList.toggle('color-orange');
   var idName = e.target.id;
-  var coordinates = [idName.slice(11, 13), idName.slice(3, 5)];
+  var coordinates = idName.split("_").splice(1, 3)
+  
   
   var idToBeRemoved = -1;
 
@@ -75,38 +75,21 @@ function change(e){
  }
 
  console.log(coordinates);
+ console.log(coordinateList)
 
 }
 
 
 
-const buttons = document.querySelectorAll("button.btn1");
-buttons.forEach((item) => {
-  item.addEventListener("click", change)
-});
-
-$("#btnshow").on("click", function(){
-  document.getElementById("buttongrid").classList.toggle("invisibility-toggle-grid");
-  document.getElementById("on1").classList.toggle("invisibility-toggle-grid");
-})
-
-$("#buffershow").on("click", function(){
-  document.getElementById("circle").classList.toggle("invisibility-toggle-button");
-  document.getElementById("on2").classList.toggle("invisibility-toggle-button");
-})
 
 
-
-$("#result").on("click", calc);
-
-// $("#back").on("click", back);
 
 
 
 
 function calc(){
 
- bufferRadius = document.getElementById("slider").value / 24;
+ bufferRadius = document.getElementById("slider").value / 20;
 
 f = parseFloat(document.getElementById("f_entry").value);
 g = parseFloat(document.getElementById("g_entry").value);
@@ -116,10 +99,8 @@ g = parseFloat(document.getElementById("g_entry").value);
  console.log(bufferRadius);
 
 
-  // bufferRadius = 5.79166667;
-
-  for(var y = 1; y <= 37; y++){
-    for(var x = 1; x <= 83; x++){
+  for(var y = 1; y <= numRows; y++){
+    for(var x = 1; x <= numColumns; x++){
       
       
       var i = -1;
@@ -139,10 +120,7 @@ g = parseFloat(document.getElementById("g_entry").value);
 
         for (var i = 0; i < coordinateList.length; i++){
           var crime = coordinateList[i];
-          var distance = Math.abs(x - crime[0]) + Math.abs(y - crime[1]);
-          
-  
-          
+          var distance = Math.abs(x - crime[0]) + Math.abs(y - crime[1]);          
   
           if (distance > bufferRadius){
   
@@ -177,8 +155,6 @@ g = parseFloat(document.getElementById("g_entry").value);
     }
   }
 
-  // console.log(finalList);
-  // console.log(bufferRadius);
   changeButtons()
 
 }
@@ -188,43 +164,34 @@ function changeButtons(){
 
   $("#circle").hide()
 
-  finalList[0] = finalList[1]
-  sampleList[0] = sampleList[1]
-
   sampleList.sort();
 
-  for (var x  = 1; x <= 3071; x++){
-    var column = x % 83;
+  for (var x  = 1; x <= numButtons; x++){
+    var column = x % numColumns;
     if (column == 0){
-      column = 83;
-    }
-    if (column < 10){
-      column = "0"+column;
+      column = numColumns;
     }
 
-    var row = Math.ceil(x/83) 
-    if (row < 10){
-      row = "0"+row;
-    }
 
-    var idString = "row" + row + "column" + column;
+    var row = Math.ceil(x/numColumns) 
 
-    var comparable = finalList[x-1];
+
+    var idString = "btn_" + column + "_" + row;
+
+    var comparable = finalList[x];
   
     if (comparable == 0){
       var colour = "purple"
-    } else if (comparable <= sampleList[2770]){
+    } else if (comparable <= sampleList[Math.ceil(0.9*numButtons)]){
       var colour = "black";
-    } else if (comparable <= sampleList[2895]){
+    } else if (comparable <= sampleList[Math.ceil(0.94*numButtons)]){
       var colour = "yellow";
-    } else if (comparable <= sampleList[3020]){
+    } else if (comparable <= sampleList[Math.ceil(0.98*numButtons)]){
       var colour = "orange";
     }  else{
       var colour = "red";
     }
 
-
-    //console.log(sampleList);
 
     $("#" + idString).css("background-color", colour);
     $("#" + idString).css("opacity", "0.25");
@@ -249,23 +216,16 @@ function changeButtons(){
 
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
   const uluru = { lat: 30.9010, lng: 75.8573 };
-  // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: uluru,
     disableDefaultUI: true,
     mapId: '344feaebf975eeb6'
   });
-  // The marker, positioned at Uluru
-  // const marker = new google.maps.Marker({
-  //   position: uluru,
-  //   map: map,
-  // });
 }
 
-window.initMap = initMap;
+window.initMap = initMap();
 
 
 
@@ -277,8 +237,58 @@ $("#btn").on("click", function(){
   menu.classList.toggle("back-black");
 })
 
-make_sticky("#menu")
-make_sticky("#btn")
 
 
 
+function makeGrid(cellWidth, containerId) {
+  let container = document.getElementById(containerId);
+  let rect = container.getBoundingClientRect();
+  console.log("dimensions", rect.width, rect.height, rect.x, rect.y);
+
+  let i = 1;
+  let j = 1;
+  
+  while(i <= Math.floor(rect.height / cellWidth)) {
+    j=1;
+    $(`#${containerId}`).append(`<div id="row_${i}" class="btn_row"></div>`);
+    var currRow = $(`#row_${i}`);
+    console.log(Math.floor(rect.width / cellWidth));
+    while(j <= Math.floor(rect.width / cellWidth)) {
+      currRow.append(`<button id="btn_${j}_${i}" class="btn1"></button>`);
+      j++;
+      numButtons++
+    }
+    i++;
+  }
+
+  numColumns = Math.floor(rect.width / cellWidth)
+  numRows = i - 1
+  console.log(numButtons)
+  console.log(numRows)
+  console.log(numColumns)
+}
+
+makeGrid(10, "buttongrid");
+
+
+
+const buttons = document.querySelectorAll("button.btn1");
+buttons.forEach((item) => {
+  item.addEventListener("click", change)
+});
+
+$("#btnshow").on("click", function(){
+  document.getElementById("buttongrid").classList.toggle("invisibility-toggle-grid");
+  document.getElementById("on1").classList.toggle("invisibility-toggle-grid");
+})
+
+$("#buffershow").on("click", function(){
+  document.getElementById("circle").classList.toggle("invisibility-toggle-button");
+  document.getElementById("on2").classList.toggle("invisibility-toggle-button");
+})
+
+
+
+$("#result").on("click", calc);
+
+});
