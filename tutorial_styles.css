@@ -20,7 +20,7 @@
 
 #btn{
   transition:opacity 0.3s, visibility 0.3s;
-  background-color: rgb(238, 236, 236);  
+  background-color: transparent;  
   font-size: 1.15vw; 
   color: black;
   right: 2%;
