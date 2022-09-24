@@ -94,6 +94,10 @@
   margin-top: 5%;
 }
 
+#margin_id3{
+  margin-top: 10%;
+}
+
 @media screen and (max-width: 758px){
 
   #tutorial_photo{
@@ -103,6 +107,14 @@
 
   .bg_text{
       font-size: 9vw;
+  }
+
+  #margin_id{
+    margin-top: 25%;
+  }
+
+  #margin_id3{
+    margin-top: 25%;
   }
 
 
@@ -115,6 +127,13 @@
     margin-top: 70px;
   }
  
+  .info_row{
+    margin-top: 15%;
+  }
+
+  .testpadding{
+    margin-top: 20%;
+  }
 
   .color_p{
     font-size: 3vw;
